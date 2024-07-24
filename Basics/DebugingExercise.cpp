@@ -1,16 +1,32 @@
+/*
+Pattern
+N = 4
+   *
+  ***
+ *****
+*******
+*/
 #include<iostream>
 using namespace std;
-
-
 int main(){
-    int n=4;
-    int i=0;
-    while(i<n){
-        int j = 0,count = i+1;
-        while(j<count){
-            cout<<j+2;
-            j = j + 1;
-            
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n){
+        int j = i,count = 2*n,gaps=(n-i),k=1;
+        while(k<=gaps){
+            cout<<" ";
+            k = k + 1;
+        }
+        int m = 1,ch = count - 2*gaps;
+        while(m<ch){
+            cout<<"*";
+            m = m + 1;
+        }
+        k = 1;
+        while(k<=gaps){
+            cout<<" ";
+            k = k + 1;
         }
         cout<<"\n";
         i = i + 1;
