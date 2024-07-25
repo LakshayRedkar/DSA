@@ -1,30 +1,32 @@
-/*
-Pattern
-N = 4
-   *
-  ***
- *****
-*******
-*/
 #include<iostream>
 using namespace std;
 int main(){
-    int n;
-    cin>>n;
+    int no;
+    cin>>no;
     int i=1;
-    while(i<=n){
-        int j = i,count = 2*n,gaps=(n-i),k=1;
-        while(k<=gaps){
+    int n = 2*no-1;
+    while(i<=(no)){
+        int gaps = n-2*i+1,k=1;
+        int j = i;
+        while(k<=gaps/2){
             cout<<" ";
             k = k + 1;
         }
-        int m = 1,ch = count - 2*gaps;
-        while(m<ch){
-            cout<<"*";
-            m = m + 1;
+        int ch = n - gaps, z = (ch+1)/2;
+        while(z>=1){
+            cout<<j;
+            j = j + 1;
+            z = z - 1;
+        }
+        j = j - 1;
+        z = (ch-1)/2;
+        while(z>=1){
+            j = j - 1;
+            cout<<j;
+            z = z - 1;
         }
         k = 1;
-        while(k<=gaps){
+        while(k<=gaps/2){
             cout<<" ";
             k = k + 1;
         }
