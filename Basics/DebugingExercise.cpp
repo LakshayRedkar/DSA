@@ -1,29 +1,21 @@
 #include<iostream>
 using namespace std;
-int main(){
-    int no;
-    cin>>no;
+void printPatt(int n){
     int i=1;
-    int n = 2*no-1;
-    while(i<=(no)){
+    while(i<=(n)){
         int gaps = n-2*i+1,k=1;
-        int j = i;
+        if(i>(n+1)/2){
+            int no = (n+1)/2;
+            gaps = 2*(i%no);
+        }
         while(k<=gaps/2){
             cout<<" ";
             k = k + 1;
         }
-        int ch = n - gaps, z = (ch+1)/2;
-        while(z>=1){
-            cout<<j;
-            j = j + 1;
-            z = z - 1;
-        }
-        j = j - 1;
-        z = (ch-1)/2;
-        while(z>=1){
-            j = j - 1;
-            cout<<j;
-            z = z - 1;
+        int ch = n - gaps;
+        while(ch>=1){
+            cout<<"*";
+            ch = ch - 1;
         }
         k = 1;
         while(k<=gaps/2){
@@ -33,4 +25,7 @@ int main(){
         cout<<"\n";
         i = i + 1;
     }
+}
+int main(){
+    printPatt(5);
 }
